@@ -1,0 +1,68 @@
+<!-- Layout for the blog website will be the skeleton of every webpage within the nocturnal mediations blog -->
+
+<DOCTYPE html>
+    <!-- Employ Dark theme throughout the entire web app -->
+    <html lang="en" data-bs-theme="dark">
+        <head>
+            <meta charset="utf-8">
+
+            <!-- Code to ensure via bootstrap the application scales to the user's screen -->
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+
+            <!-- Get Bootstrap -->
+            <!-- Link To Sytle Sheet-->
+            <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+            <!-- Link to Javascript for BootStrap -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+            <!-- Include Popper from bootstrap to build in dropdowns -->
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+            integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
+            integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>
+
+            <!-- Title Block will Dynamically change with each webpage and jinja used -->
+            <title>{% block title %}{% endblock %}</title>
+
+        </head>
+
+        <!-- Body within the layout will implement a navbar and footer to reamin constant across all web pages -->
+        <body class="bg-dark">
+            <!-- Nabbar Code: -->
+            <nav class="navbar sticky-top navbar-expand-lg navbar-dark" style="background-color: lightslategray;">
+                <div class="container-fluid position-relative">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="navbar-brand text-light" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-brand text-light" href="growth_mindset.html">Growth Mindset</a>
+                        </li>
+                        <li class="nav-item">
+                            <!-- For this navbar item ensure propper jinja is used if user creates a subscriber account -->
+                            <!-- Ensure that if the user is not signed up that this list item will direct to sign up page-->
+                            <a class="navbar-brand text-light">{{session['username']}} Subscriber Access</a> 
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-brand text-light" href="sign_up.html">Subscribe</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- Body with jinja to allow dynamic body webpages, ensure all webpages utilize dark theme -->
+            {% block body %}{% endblock %}
+
+        </body>
+
+        <!-- Footer -->
+        <!-- No Jinja Block as the goal of the footer is that it will stay constant across all web pages of the web app-->
+        <footer class="footer mt-auto py-3 bg-dark">
+            <div class="container">
+                <span class="text-light">NOCTURNAL MEDITATIONS</span>
+            </div>
+        </footer>
+
+    </html>
+</DOCTYPE>
