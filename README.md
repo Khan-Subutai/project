@@ -1,7 +1,10 @@
 # project
 ## CS50 Final Project
-### Nocturanl Meditations Blog Website
+## Nocturnal Meditations Blog Website
+### Motivation and Context
   Welcome to my CS50 final project. The end state goal for this project is a website hosted on either Azure, AWS, or google cloud where I can post essays about different topics and then meta essays trying to connect the different essays togather as a way of making sense of the world and connecting the dots of what is really going on. I do not intend to submit the goal of what I really want this blog to be in fact as of doing this final project I have only written two of the essays that the blog will feature. The goal is that this will be a life long hobby of making this web app/site the best it can be and just really being I a place I can get my thoughts out there in anynous way. I plan on changing domain names after submitting. 
 
-*Implementation*
+  This is my second attempt at the final project. My first attempt at the final project was a scheduling web app using flask and SQL lite. The goal was a simple to use web app where Air Force flying squadrons could quickly build, edit, and diseminate monthly, weekly, and daily flying schedules while being able to track all flight records of individual pilots within the squadron. After putting about 15 hours into that project I decided to go somewhere else, but that said I'm still proud of how it went I was able to create a complictated SQLite database tha actually worked for pulling sorties and saving record too. However, to actually make the front end anything near what I wanted, and thus influence thus actually create usability for pilots I have a very long way to go and it was me biting off more than I can chew at this time. 
+
+## Implementation for Nocturnal Mediations Flask & Bootsrtap Based Web App:
 This blog website will be a flask based web app using the bootstrap frame work. Additionally I will trying to implement a SQLite database to create a list of "subscribers" to get emails for theoretical news letter that will come later on down the road and being as when I submit this project I won't have any will be an empty database but the framework will be there. 
