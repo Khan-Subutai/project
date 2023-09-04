@@ -37,11 +37,12 @@
             <nav class="navbar sticky-top navbar-expand-md navbar-dark bg-dark">
                 <div class="container-fluid">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <!-- Nav bar links not working may need to make a route in app.py so that they are functional-->
                         <li class="nav-item">
-                            <a class="navbar-brand text-light" href="index.html">Home</a>
+                            <a class="navbar-brand text-light" href="/index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navbar-brand text-light" href="growth_mindset.html">Growth Mindset</a>
+                            <a class="navbar-brand text-light" href="/growth_mindset">Growth Mindset</a>
                         </li>
                         <div>
                             {{ session.get('user_name','') }}
@@ -52,10 +53,10 @@
                             <a class="navbar-brand text-light">Subscriber Access</a>
                         </li>
                         <li class="nav-item">
-                            <a class="navbar-brand text-light" href="subscribe.html">Subscribe</a>
+                            <a class="navbar-brand text-light" href="/subscribe">Subscribe</a>
                         </li>
                         <li class="nav-itme">
-                            <a class="navbar-brand text-light" href="login.html">Login</a>
+                            <a class="navbar-brand text-light" href="/login">Login</a>
                         </li>
                     </ul>
                 </div>
