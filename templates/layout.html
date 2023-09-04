@@ -49,37 +49,31 @@
             <!-- Nabbar Code: -->
         <div class="nav-scroller py-1 mb-3 border-bottom">    
             <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="/index">Nocturnal Meditations</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                            <!-- Nav bar links not working may need to make a route in app.py so that they are functional-->
-                            <li class="nav-item">
-                                <a class="nav-link active text-light" aria-current="page" href="/index">Home</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Essays
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Peak Fossil Fuel</a></li>
-                                    <li><a class="dropdown-item" href="#">The Value of Currency</a></li>
-                                    <li><a class="dropdown-item" href="#">The AI Arms Race</a></li>
-                                </ul>
-                            </li>
-                            <div>
-                                {{ session.get('user_name','') }}
-                            </div>
-                            <li class="nav-item">
-                                <!-- For this navbar item ensure propper jinja is used if user creates a subscriber account -->
-                                <!-- Ensure that if the user is not signed up that this list item will direct to sign up page-->
-                                <a class="nav-link text-light disabled" aria-disabled="true" >Subscriber Access</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <!-- Nav bar links not working may need to make a route in app.py so that they are functional-->
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="/index">Home</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Essays
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Peak Fossil Fuel</a></li>
+                                <li><a class="dropdown-item" href="#">The Value of Currency</a></li>
+                                <li><a class="dropdown-item" href="#">The AI Arms Race</a></li>
+                            </ul>
+                        </li>
+                        <div>
+                            {{ session.get('user_name','') }}
+                        </div>
+                        <li class="nav-item">
+                            <!-- For this navbar item ensure propper jinja is used if user creates a subscriber account -->
+                            <!-- Ensure that if the user is not signed up that this list item will direct to sign up page-->
+                            <a class="nav-link text-light disabled" aria-disabled="true" >Subscriber Access</a>
+                        </li>
+                    </ul>
                 </div>
             </nav>
         </div>
