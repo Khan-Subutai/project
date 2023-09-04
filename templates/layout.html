@@ -41,8 +41,16 @@
                         <li class="nav-item">
                             <a class="navbar-brand text-light" href="/index">Home</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="navbar-brand text-light" href="/growth_mindset">Growth Mindset</a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Essays
+                              </a>
+                              <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Peak Fossil Fuel</a></li>
+                                <li><a class="dropdown-item" href="#">The Value of Currency</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">The AI Arms Race</a></li>
+                              </ul>
                         </li>
                         <div>
                             {{ session.get('user_name','') }}
