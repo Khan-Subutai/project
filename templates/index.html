@@ -9,6 +9,7 @@
 <!-- Implement Carousel to show current blog posts, most popular, most recent.. etc. Each hyperlinked to the post itself -->
 <body>
     <main>
+      <!-- Begin Carousel -->
         <div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
          <!-- Button indicators show how many "pages" are in carousel which one is being shown and a way to navigate to others for the user -->
             <div class="carousel-indicators">
@@ -47,6 +48,68 @@
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>       
+        </div>
+        <!-- End Carousel -->
+        <!-- Begin Blog Section -->
+        <hr>
+        <div class="container-fluid">
+          <article class="blog-post">
+            <h2 class="link-body-emphasis">Fossil Fuel Peak</h2>
+            <p class="blog-post-meta">4 September 2023 by Gaius Gracchus</p>
+            <p> Essay on the economic implications of possibly passing the peak of fossil fuel cost per capita and what it means for the global 
+                energy supply. Exploring wether or not renuable and nuclear have caused the decline as well as looking at global energy production
+                as a whole in a world that is now online and using more electricity than ever. 
+            </p>
+            <hr>
+            <p> Actual Essay contents... place holder</p>
+            <h3>Energy List</h3>
+            <ul>
+              <li>Oil</li>
+              <li>Coal</li>
+              <li>Natural Gas</li>
+              <li>Renewable</li>
+              <li>Nuclear</li>
+            </ul>
+            <h3>Per Capita Table</h3>
+            <p>Table showing the per capita use globally of different sources of energy</p>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Source</th>
+                  <th>KW/hr per capita</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Oil</td>
+                  <td>a</td>
+                </tr>
+                <tr>
+                  <td>Coal</td>
+                  <td>b</td>
+                </tr>
+                <tr>
+                  <td>Natural Gas</td>
+                  <td>c</td>
+                </tr>
+                <tr>
+                  <td>Renewables</td>
+                  <td>d</td>
+                </tr>
+                <tr>
+                  <td>Nuclear</td>
+                  <td>e </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td>Totals</td>
+                  <td>a+b+b+d+e</td>
+                </tr>
+              </tfoot>
+            </table>
+            <p>Article continuing after table to end</p>
+          </article>
         </div>
     </main>
 </body>
