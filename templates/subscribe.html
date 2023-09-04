@@ -1,0 +1,35 @@
+<!-- Web page for users to sign ub for news letter aka essays straight to their email and if subscribed unlock content on webpage -->
+{% extends layout.html %}
+
+{% block title %}
+Subscribe
+{% endblock %}
+
+{% body block %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-6 text-center text-light">
+            <h1>Subscribe for Additional Nocturnal Meditations Content and News Letter</h1>
+            <form action="/subscribe" method="post">
+                <!-- user_name field -->
+                <div class="mb-3">
+                    <input required type="text" class="form-control" id="user_name" name="user_name" placeholder="Enter Username" autofocus autocomplete="off">
+                </div>
+                 <!-- Password field -->
+                 <div class="mb-3">
+                    <input required type="text" class="form-control" id="password" name="password" placeholder="Enter Password" autocomplete="off">
+                </div>
+                <!-- Email field -->
+                <div class="mb-3">
+                    <input required type="text" class="form-control" id="email" name="email" placeholder="Enter Email" autocomplete="off">
+                </div>
+                <!-- Button to submit -->
+                <div class="d-grid gap-2 mt-3">
+                    <button type="submit" class="btn btn-outline-light">Subscribe</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
