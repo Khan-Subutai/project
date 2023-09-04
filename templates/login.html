@@ -1,0 +1,33 @@
+<!-- Login Screen  Where the User will be sent after clicking the Login Button off the Nav-Bar From Index.html -->
+{% extends "layout.html" %}
+
+{% block title %}
+Login
+{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-6 text-center">
+                <h1 class="text-light">Login To View Subscriber Access Material</h1>
+
+                <!-- Beggining of Form tag everything that will be submitted must be below-->
+                <form action="/login" method="post">
+                    <!-- Username Field -->
+                    <div class="mb-3">
+                        <input required type="text" class="form-control" id="user_name" name="user_name" placeholder="Enter Username" autofocus autocomplete="off">
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="mb-3">
+                        <input required type="password" class="form-control" id="password" name="password" placeholder="Enter Password"  autocomplete="off">
+                    </div>
+
+                    <!-- Button -->
+                    <div class="d-grid gap-2 mt-3">
+                        <button type="submit" class="btn btn-outline-light">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

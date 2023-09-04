@@ -94,6 +94,7 @@ def subscribe():
 
     # Create session for the user who just made subscriber so that they do not have to go to the login page
     # Query Database to get user information that they just submited, ... could this be done another way???
+    # Also realize that for now basically the only functionality that this brings is to add the user's username to the navbar
     conn = sqlite3.connect('project.db')
     c = conn.cursor()
     c.execute("SELECT * FROM subscribers WHERE user_name = ?", (user_name,))
@@ -108,4 +109,50 @@ def subscribe():
     return redirect("/")
 ### End subsrcibe function
 
+### Create Login function, user logins will be required to view the subscriber materials
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    # clear any previous session
+    session.clear()
+
+    if request.method == "GET":
+        return render_template("login.html")
+    # If user uses login page to login method will be post i.e. else in this scenario
+    else:
+        user_name = request.form.get("user_name")
+        if not user_name:
+            return apology("Must enter User Name")
+        password = request.form.get("password")
+        if not password:
+            return apology("Must enter Password")
+    conn = sqlite3.connect('project.db')
+    c = conn.cursor()
+    c.execute("SELECT * FROM subscribers WHERE user_name = ?", (user_name,))
+    user = c.fetchone() 
+    conn.close() 
+    if user == None:
+        return apology("Invalid user name if you are not a subscriber jsut click subscribe to register")
+    if not check_password_hash(user[2], password):
+        return apology("Incorrect password please try again")
+    session["user_id"] = user[0]
+    session["user_name"] = user[1]
+    session["user_email"] = user[3]
+    return redirect("/")
+### End login function
+
+### Create login required function
+# NOTE THIS FUNCTION IS TAKEN IN ITS ENTIRITY FROM CS50 WEEK 9 ALL CREDIT TO THE CS50 TEAM!!!!!
+def login_required(f):
+    """
+    Decorate routes to require login.
+
+    http://flask.pocoo.org/docs/0.12/patterns/viewdecorators/
+    """
+    @wraps(f)
+    def decorated_function(*args, **kwargs):
+        if session.get("user_id") is None:
+            return redirect("/login")
+        return f(*args, **kwargs)
+    return decorated_function
+### End login required function 
 
