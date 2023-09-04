@@ -43,12 +43,13 @@
                         <li class="nav-item">
                             <a class="navbar-brand text-light" href="growth_mindset.html">Growth Mindset</a>
                         </li>
+                        <div>
+                            {{ session.get('user_name','') }}
+                        </div>
                         <li class="nav-item">
                             <!-- For this navbar item ensure propper jinja is used if user creates a subscriber account -->
                             <!-- Ensure that if the user is not signed up that this list item will direct to sign up page-->
-                            {% if user_name %}
-                            <a class="navbar-brand text-light">{{session['user_name']}} Subscriber Access</a>
-                            {% endif %} 
+                            <a class="navbar-brand text-light">Subscriber Access</a>
                         </li>
                         <li class="nav-item">
                             <a class="navbar-brand text-light" href="subscribe.html">Subscribe</a>

@@ -43,9 +43,8 @@ def apology(message):
 @app.route("/", methods=['GET', 'POST'])
 def index():
     # Render the landing page of the web app
-    user_name = session.get("user_name", "")
     if request.method == "GET":
-        return render_template("index.html", user_name=user_name)
+        return render_template("index.html")
 ### End route for rendering the homepage of the web app ###
 
 
