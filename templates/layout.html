@@ -46,7 +46,9 @@
                         <li class="nav-item">
                             <!-- For this navbar item ensure propper jinja is used if user creates a subscriber account -->
                             <!-- Ensure that if the user is not signed up that this list item will direct to sign up page-->
-                            <a class="navbar-brand text-light">{{session['user_name']}} Subscriber Access</a> 
+                            {% if user_name %}
+                            <a class="navbar-brand text-light">{{session['user_name']}} Subscriber Access</a>
+                            {% endif %} 
                         </li>
                         <li class="nav-item">
                             <a class="navbar-brand text-light" href="subscribe.html">Subscribe</a>
