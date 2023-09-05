@@ -1,0 +1,120 @@
+<!-- Same build as index with the following changes: 
+1. Carousel defaults to the second essay image
+2. The blog/essay portion of the webpage now has the second blog not the first
+-->
+{% extends "layout.html" %}
+
+{% block title %}
+Currency
+{% endblock %}
+
+{% block body %}
+<!-- Implement Carousel to show current blog posts, most popular, most recent.. etc. Each hyperlinked to the post itself -->
+<body>
+   <main class="container">
+     <!-- Begin Carousel -->
+       <div id="mainCarousel" class="carousel slide p-4 m-md-5 mb-4" data-bs-ride="carousel">
+        <!-- Button indicators show how many "pages" are in carousel which one is being shown and a way to navigate to others for the user -->
+        <!-- Note to get carousel to show #2's image set active for both the items and indicaters to the second postions -->
+           <div class="carousel-indicators">
+             <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"  aria-label="Slide 1"></button>
+             <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-current="true" aria-label="Slide 2"></button>
+             <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+           </div>
+           <div class="carousel-inner col-lg-6 px-0 text-light">
+             <div class="carousel-item">
+               <img src="{{ url_for('static', filename='images/ff.png') }}" class="d-block w-100" alt="image of coal burning power plant">
+               <div class="carousel-caption d-none d-md-block">
+                 <h5>Fossil Fuel Peak</h5>
+                 <p>The per capita cost of energy and how it shapes the world.</p>
+               </div>
+             </div>
+             <div class="carousel-item active">
+               <img src="{{ url_for('static', filename='images/nyse.png') }}" class="d-block w-100" alt="image of new york stock exchange">
+               <div class="carousel-caption d-none d-md-block">
+                 <h5>The value of currency</h5>
+                 <p>The Fed, the dollar, and you.</p>
+               </div>
+             </div>
+             <div class="carousel-item">
+               <img src="{{ url_for('static', filename='images/ai.png') }}" class="d-block w-100" alt="image of brain as a computer chip">
+               <div class="carousel-caption d-none d-md-block">
+                 <h5>The AI Race</h5>
+                 <p>An Internation arms race going where no one can predict.</p>
+               </div>
+             </div>
+           </div>
+           <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+             <span class="visually-hidden">Previous</span>
+           </button>
+           <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+             <span class="carousel-control-next-icon" aria-hidden="true"></span>
+             <span class="visually-hidden">Next</span>
+           </button>       
+       </div>
+       <!-- End Carousel -->
+       <!-- Begin Blog Section -->
+       <hr>
+       <div class="container-fluid">
+         <article class="blog-post">
+           <h2 class="link-body-emphasis">Fossil Fuel Peak</h2>
+           <p class="blog-post-meta">4 September 2023 by Gaius Gracchus</p>
+           <p> Essay on the economic implications of possibly passing the peak of fossil fuel cost per capita and what it means for the global 
+               energy supply. Exploring wether or not renuable and nuclear have caused the decline as well as looking at global energy production
+               as a whole in a world that is now online and using more electricity than ever. 
+           </p>
+           <hr>
+           <p> Actual Essay contents... place holder</p>
+           <h3>Energy List</h3>
+           <ul>
+             <li>Oil</li>
+             <li>Coal</li>
+             <li>Natural Gas</li>
+             <li>Renewable</li>
+             <li>Nuclear</li>
+           </ul>
+           <h3>Per Capita Table</h3>
+           <p>Table showing the per capita use globally of different sources of energy</p>
+           <table class="table">
+             <thead>
+               <tr>
+                 <th>Source</th>
+                 <th>KW/hr per capita</th>
+               </tr>
+             </thead>
+             <tbody>
+               <tr>
+                 <td>Oil</td>
+                 <td>a</td>
+               </tr>
+               <tr>
+                 <td>Coal</td>
+                 <td>b</td>
+               </tr>
+               <tr>
+                 <td>Natural Gas</td>
+                 <td>c</td>
+               </tr>
+               <tr>
+                 <td>Renewables</td>
+                 <td>d</td>
+               </tr>
+               <tr>
+                 <td>Nuclear</td>
+                 <td>e </td>
+               </tr>
+             </tbody>
+             <tfoot>
+               <tr>
+                 <td>Totals</td>
+                 <td>a+b+b+d+e</td>
+               </tr>
+             </tfoot>
+           </table>
+           <p>Article continuing after table to end</p>
+         </article>
+       </div>
+   </main>
+</body>
+{% endblock %}
