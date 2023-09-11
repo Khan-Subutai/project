@@ -32,69 +32,67 @@
         </head>
 
         <!-- Body within the layout will implement a navbar and footer to reamin constant across all web pages -->
-        <div class="container">
-            <header class="border-bottom py-1 mb-3" data-bs-theme="dark">
-            <!-- Website title block with subscribe and login at either end-->
-                <div class="row flex-nonwrap justify-content-between align-items-center">
-                    <div class="col-4 pt-1">
-                        <a class="link-secondary" href="/login">Log In</a>
-                    </div>
-                    <div class="col-4 text-center text-light">
-                        <h1>NOCTURNAL MEDIATIONS</h1>
-                    </div>
-                    <div class="col-4 d-flex justify-content-end align-items-center">
-                        <a class="link-secondary" href="/subscribe">Subscribe</a>
-                    </div>
+        <header class="border-bottom py-1 mb-3" data-bs-theme="dark">
+        <!-- Website title block with subscribe and login at either end-->
+            <div class="row flex-nonwrap justify-content-between align-items-center">
+                <div class="col-4 pt-1">
+                    <a class="link-secondary" href="/login">Log In</a>
                 </div>
-            </header>        
-                <!-- Nabbar Code: -->
-            <div class="nav-scroller py-1 mb-3 border-bottom">    
-                <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
-                    <!-- Navbar Toggler Button -->
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav">
-                            <!-- Nav bar links not working may need to make a route in app.py so that they are functional-->
-                            <li class="nav-item">
-                                <a class="nav-link active text-light" aria-current="page" href="/index">Home</a>
-                            </li>
-                            
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Essays
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Peak Fossil Fuel</a></li>
-                                    <li><a class="dropdown-item" href="#">The Value of Currency</a></li>
-                                    <li><a class="dropdown-item" href="#">The AI Arms Race</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="#">Peak Fossil Fuel</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="#">The Value of Currency</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-light" href="#">The AI Arms Race</a>
-                            </li>
-                            <div>
-                                <li class="nav-item text-light">
-                                    {{ session.get('user_name','') }}
-                                </li>
-                            </div>
-                            <li class="nav-item">
-                                <!-- For this navbar item ensure propper jinja is used if user creates a subscriber account -->
-                                <!-- Ensure that if the user is not signed up that this list item will direct to sign up page-->
-                                <a class="nav-link text-light disabled" aria-disabled="true" >Subscriber Access</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
+                <div class="col-4 text-center text-light">
+                    <h1>NOCTURNAL MEDIATIONS</h1>
+                </div>
+                <div class="col-4 d-flex justify-content-end align-items-center">
+                    <a class="link-secondary" href="/subscribe">Subscribe</a>
+                </div>
             </div>
+        </header>        
+            <!-- Nabbar Code: -->
+        <div class="nav-scroller py-1 mb-3 border-bottom">    
+            <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary navbar-dark bg-dark">
+                <!-- Navbar Toggler Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <!-- Nav bar links not working may need to make a route in app.py so that they are functional-->
+                        <li class="nav-item">
+                            <a class="nav-link active text-light" aria-current="page" href="/index">Home</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Essays
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Peak Fossil Fuel</a></li>
+                                <li><a class="dropdown-item" href="#">The Value of Currency</a></li>
+                                <li><a class="dropdown-item" href="#">The AI Arms Race</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#">Peak Fossil Fuel</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#">The Value of Currency</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-light" href="#">The AI Arms Race</a>
+                        </li>
+                        <div>
+                            <li class="nav-item text-light">
+                                {{ session.get('user_name','') }}
+                            </li>
+                        </div>
+                        <li class="nav-item">
+                            <!-- For this navbar item ensure propper jinja is used if user creates a subscriber account -->
+                            <!-- Ensure that if the user is not signed up that this list item will direct to sign up page-->
+                            <a class="nav-link text-light disabled" aria-disabled="true" >Subscriber Access</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>    
 
         <body>
