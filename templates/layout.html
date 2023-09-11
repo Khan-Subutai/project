@@ -82,7 +82,9 @@
                                 <a class="nav-link text-light" href="#">The AI Arms Race</a>
                             </li>
                             <div>
-                                {{ session.get('user_name','') }}
+                                <li class="nav-item text-light">
+                                    {{ session.get('user_name','') }}
+                                </li>
                             </div>
                             <li class="nav-item">
                                 <!-- For this navbar item ensure propper jinja is used if user creates a subscriber account -->
