@@ -38,6 +38,7 @@ Session(app)
 ### Create ability to render apology web page letting the user know their input failed server side validation
 def apology(message):
     return render_template("apology.html", message=message)
+### End Aoplogy Function
 
 ### Create route for index.html what a user would see when first visitng the website ###
 @app.route("/", methods=['GET', 'POST'])
@@ -47,6 +48,22 @@ def index():
         return render_template("index.html")
 ### End route for rendering the homepage of the web app ###
 
+
+### Create route for essay2.html for when a user either clicks on the second carousel image or uses a nav-bar link ###
+@app.route("/essay2", methods=['GET', 'POST'])
+def essay2():
+    # Render the landing page of the web app
+    if request.method == "GET":
+        return render_template("essay2.html")
+### End route for rendering the essay2 of the web app ###
+
+
+### Create route for essay3.html for when user either click on the third carousel image or uses a nav-bar link ###
+@app.route("/essay3", methods = ['GET', 'POST'])
+def essay3():
+    if request.method == "GET":
+        return render_template("essay3.html")
+### End route for rendering the essay of the web app ### 
 
 #### Create Subscribe Function ###
 @app.route('/subscribe', methods=['GET', 'POST'])
