@@ -78,7 +78,19 @@ Currency
            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
            <script>
             // Code to create inflation Chart... Feature to add js to project!
+              const ctx = document.getElementById('inflationChart').getContext('2d');
+              const inflationChart = new Chart(ctx, {
+                type: line
+                data: {
+                  labels: ['1923', '1933', '1943', '1953', '1963', '1973', '1983', '1993', '2003', '2013', '2023'],
+                  datasets: [{
+                    label: 'Buying Power of $1 Dollar Over Time',
+                    data: [1, 1.25, 0.97, 0.63, 0.55, 0.38, 0.17, 0.12, 0.09, 0.07, 0.06]
+                  }]
+                }
+              })
            </script>
+           <p>All data from <a href="in2013dollars.com">in2013dollars.com</a></p>
            <p>Article continuing after table to end</p>
          </article>
        </div>
