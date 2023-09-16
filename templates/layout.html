@@ -82,11 +82,9 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" href="#">The AI Arms Race</a>
                         </li>
-                        <div>
-                            <li class="nav-item text-light">
-                                {{ session.get('user_name','') }}
-                            </li>
-                        </div>
+                        <li class="nav-item text-light">
+                            {{ session.get('user_name','') }}
+                        </li>
                         <li class="nav-item">
                             <!-- For this navbar item ensure propper jinja is used if user creates a subscriber account -->
                             <!-- Ensure that if the user is not signed up that this list item will direct to sign up page-->
