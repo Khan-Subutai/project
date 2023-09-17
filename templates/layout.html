@@ -86,13 +86,13 @@
                         <li class="nav-item">
                             <a class="nav-link text-light" href="#">{{ session.get('user_name','') }}</a>
                         </li>
-                        <div class="justify-content-end">
+                        <ul class="navbar-nav ms-auto">
                             <li class="nav-item">
                                 <!-- For this navbar item ensure propper jinja is used if user creates a subscriber account -->
                                 <!-- Ensure that if the user is not signed up that this list item will direct to sign up page-->
                                 <a class="nav-link text-light" href="/logout">Log Out</a>
                             </li>
-                        </div>
+                        </ul>
                     </ul>
                 </div>
             </nav>
