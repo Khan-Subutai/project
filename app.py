@@ -58,13 +58,6 @@ def essay2():
 ### End route for rendering the essay2 of the web app ###
 
 
-### Create route for essay3.html for when user either click on the third carousel image or uses a nav-bar link ###
-@app.route("/essay3", methods = ['GET', 'POST'])
-def essay3():
-    if request.method == "GET":
-        return render_template("essay3.html")
-### End route for rendering the essay of the web app ### 
-
 #### Create Subscribe Function ###
 @app.route('/subscribe', methods=['GET', 'POST'])
 def subscribe():
@@ -173,3 +166,23 @@ def login_required(f):
     return decorated_function
 ### End login required function 
 
+
+### LAST FUNCTION!!!! Create function to only show Essay 3 if the user has "subscribed" and is logged in 
+### Goal is to still allow Essay3 the AI arms race to be in the navbar as a link but if someone is not signed in to give an apology
+### message and direct them to the subscribe page, once subscribed and logged in the user can now view Essay3 ###
+### Create route for essay3.html for when user either click on the third carousel image or uses a nav-bar link ###
+
+### Below is OG route for essay3.html, not requiring the user to be logged in
+#@app.route("/essay3", methods = ['GET', 'POST'])
+#def essay3():
+#    if request.method == "GET":
+#        return render_template("essay3.html")
+### End route for rendering the essay of the web app ### 
+
+### Login Required Essay3: 
+@app.route("/essay3", methods=["GET", "POST"])
+@login_required
+def essay3():
+    if request.method == "GET" or request.method == "POST":
+        return render_template("essay3.html")
+### End Essay3 "subscriber Access"
