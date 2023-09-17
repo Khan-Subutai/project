@@ -15,7 +15,9 @@ Currency
      <!-- Begin Carousel -->
        <div id="mainCarousel" class="carousel slide p-4 m-md-5 mb-4" data-bs-ride="carousel">
         <!-- Button indicators show how many "pages" are in carousel which one is being shown and a way to navigate to others for the user -->
-        <!-- Note to get carousel to show #2's image set active for both the items and indicaters to the second postions -->
+        <!-- Note to get carousel to show #2's image set active for both the items and indicaters to the second postions
+              i.e. for the indicator button set second buttons aria-current="true"
+              for the carousel <div class="carousel-item active" for the second image in the carousel -->
            <div class="carousel-indicators">
              <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="0" class="active"  aria-label="Slide 1"></button>
              <button type="button" data-bs-target="#mainCarousel" data-bs-slide-to="1" aria-current="true" aria-label="Slide 2"></button>
@@ -23,22 +25,28 @@ Currency
            </div>
            <div class="carousel-inner col-lg-6 px-0 text-light">
              <div class="carousel-item">
-               <img src="{{ url_for('static', filename='images/ff.png') }}" class="d-block w-100" alt="image of coal burning power plant">
-               <div class="carousel-caption d-none d-md-block">
+              <a href="/">
+                <img src="{{ url_for('static', filename='images/ff.png') }}" class="d-block w-100" alt="image of coal burning power plant">
+              </a>
+               <div class="carousel-caption d-none d-md-block text-light">
                  <h5>Fossil Fuel Peak</h5>
                  <p>The per capita cost of energy and how it shapes the world.</p>
                </div>
              </div>
              <div class="carousel-item active">
-               <img src="{{ url_for('static', filename='images/nyse.png') }}" class="d-block w-100" alt="image of new york stock exchange">
-               <div class="carousel-caption d-none d-md-block">
+              <a href="/essay2">
+                <img src="{{ url_for('static', filename='images/nyse.png') }}" class="d-block w-100" alt="image of new york stock exchange">
+              </a>
+               <div class="carousel-caption d-none d-md-block text-light">
                  <h5>The value of currency</h5>
                  <p>The Fed, the dollar, and you.</p>
                </div>
              </div>
              <div class="carousel-item">
-               <img src="{{ url_for('static', filename='images/ai.png') }}" class="d-block w-100" alt="image of brain as a computer chip">
-               <div class="carousel-caption d-none d-md-block">
+              <a href="/essay3">
+                <img src="{{ url_for('static', filename='images/ai.png') }}" class="d-block w-100" alt="image of brain as a computer chip">
+              </a>
+               <div class="carousel-caption d-none d-md-block text-light">
                  <h5>The AI Race</h5>
                  <p>An Internation arms race going where no one can predict.</p>
                </div>
