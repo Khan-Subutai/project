@@ -161,11 +161,22 @@ def login_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):
         if session.get("user_id") is None:
-            return redirect("/login")
+            return apology("Must subscribe to view this content")
         return f(*args, **kwargs)
     return decorated_function
 ### End login required function 
 
+### Log Out Function:
+@app.route("/logout")
+def logout():
+    """Log user out"""
+
+    # Forget any user_id
+    session.clear()
+
+    # Redirect user to login form
+    return redirect("/")
+### End Logout Function
 
 ### LAST FUNCTION!!!! Create function to only show Essay 3 if the user has "subscribed" and is logged in 
 ### Goal is to still allow Essay3 the AI arms race to be in the navbar as a link but if someone is not signed in to give an apology
